@@ -33,3 +33,7 @@ views
 ```
 normalize.css   base.css
 ```
+
+## 3. vue.config.js 和 .editorconfig两个文件
+
+## 4. 项目的模块划分： tabbar -> 路由映射关系
