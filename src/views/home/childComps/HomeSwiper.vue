@@ -1,6 +1,6 @@
 <template>
     <swiper>
-        <swiper-item v-for="item in cbanners" :key="item">
+        <swiper-item v-for="item in banners" :key="item">
             <a :href="item.link">
                 <img :src="item.image" alt="">
             </a>
@@ -12,23 +12,25 @@
     import {Swiper, SwiperItem} from 'components/common/swiper'
 
     export default {
-        name:'HomeSwiper',
-        porps: {
-            cbanners: {
+        name: "HomeSwiper",
+        props: {
+            banners: {
                 type: Array,
                 default(){
                     return []
                 }
             }
         },
-        components:{
+        components: {
             Swiper,
             SwiperItem
         }
-        
     }
+
 </script>
 
 <style scoped>
-
+    .swiper img {
+        width: 100%;
+    }
 </style>

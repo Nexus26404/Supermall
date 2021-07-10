@@ -1,21 +1,24 @@
 <template>
     <div id="home">
-        <nav-bar class="home-nav"><template v-slot:center><div>首页</div></template></nav-bar>
-        <ul v-for="item in banners" :key="item">
-            <li><img :src="item.image"></li>
-        </ul>
+        <nav-bar class="home-nav"><template v-slot:center><div>购物街</div></template></nav-bar>
+        <home-swiper :banners="banners"/>
+        <home-recommend-view :recommends="recommends"/>
     </div>
 </template>
 
 <script>
     import NavBar from 'components/common/navbar/NavBar'
+    import HomeSwiper from './childComps/HomeSwiper'
+    import HomeRecommendView from './childComps/HomeRecommendView'
 
     import {getHomeMultidata} from 'network/home.js'
 
     export default {
         name:'Home',
         components:{
-            NavBar
+            NavBar,
+            HomeSwiper,
+            HomeRecommendView
         },
         created(){
             // 1. 请求多个数据
@@ -40,7 +43,7 @@
         background-color: var(--color-tint);
         color: #fff;
     }
-    #home img {
+    #home img{
         width: 100%;
     }
 </style>
