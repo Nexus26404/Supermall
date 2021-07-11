@@ -1,5 +1,5 @@
 <template>
-      <tab-bar>
+      <tab-bar class="tabbar">
       <tab-bar-item path="/home">
         <template v-slot:item-icon ><img src="~assets/img/tabbar/home.svg"></template>
         <template v-slot:item-icon-active><img src="~assets/img/tabbar/home-active.svg"></template>
@@ -42,5 +42,8 @@ export default {
       margin-top: -2px;
       margin-bottom: -2px;
       vertical-align: middle;
+    }
+    .tabbar {
+      z-index: 99;
     }
 </style>
