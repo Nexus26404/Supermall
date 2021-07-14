@@ -29,7 +29,7 @@ const routes = [{
         path: '/profile',
         component: Profile
     }, {
-        path: '/detail:id',
+        path: '/detail/:iid',
         component: Detail
     }
 
