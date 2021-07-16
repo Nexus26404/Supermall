@@ -165,18 +165,16 @@
 
 <style scoped>
     #home {
-        padding: 44px 0 49px 0;
-        height: 100vh;
-        overflow: hidden;
+        height: calc(100vh - 44px - 49px);
     }
 
     .home-nav {
         background-color: var(--color-tint);
         color: #fff;
-        position: fixed;
-        left: 0;
+        position: relative;
+        /* left: 0;
         right: 0;
-        top: 0;
+        top: 0; */
         z-index: 2;
     }
 
@@ -191,7 +189,7 @@
 
     .tabControl {
         position: absolute;
-        top: 44px;
+        top: 43px;
         left: 0;
         right: 0;
         z-index: 9;

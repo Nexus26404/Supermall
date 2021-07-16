@@ -127,17 +127,16 @@
                 product.desc = this.goods.desc;
                 product.price = this.goods.realPrice;
                 product.iid = this.iid;
-                console.log(product)
 
                 // 2. 将商品添加到购物车里
-
+                this.$store.dispatch('addCart', product)
             }
         },
         computed: {
             themeYs(){
                 let arr = []
                 for(let k of this.themeTopYs) {
-                    arr.push(document.querySelector(k).offsetTop)
+                    arr.push(document.querySelector(k)?.offsetTop)
                 }
                 arr.push(Number.MAX_VALUE)
                 return arr;
@@ -149,8 +148,7 @@
 <style scoped>
     #detail {
         position: relative;
-        padding-bottom: 49px;
-        height: 100vh;
+        height: calc(100vh - 44px - 49px);
     }
 
     .detail-nav {
@@ -160,6 +158,7 @@
     }
 
     .content {
-        height: calc(100% - 44px);
+        height: 100%;
+        overflow: hidden;
     }
 </style>
