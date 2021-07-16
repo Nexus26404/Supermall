@@ -154,8 +154,8 @@
             console.log('your home has been destroyed!')
         },
         activated(){
-            this.$refs.scroll.scrollTo(0, this.saveY, 1000);
-            // this.$refs.scroll.scroll.refresh();
+            this.$refs.scroll.scroll.refresh();
+            this.$refs.scroll.scrollTo(0, this.saveY, 0);
         },
         deactivated(){
             this.saveY = this.$refs.scroll.getScrollY();

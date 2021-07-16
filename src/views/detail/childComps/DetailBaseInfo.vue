@@ -37,7 +37,7 @@ export default {
 <style scoped>
     .base-info {
         width: 100%;
-        padding: 10px;
+        padding: 20px 10px 10px;
         border-bottom: solid 2px rgba(100, 100, 100, .1);
     }
     .info-title {
@@ -69,16 +69,16 @@ export default {
         top: -8px;
     }
     .info-other {
-        margin-top: 12px;
-        font-size: 12px;
+        margin-top: 24px;
+        font-size: 14px;
         display: flex;
         color: var(--color-text);
-        padding-bottom: 4px;
+        padding-bottom: 20px;
         justify-content: space-between;
         border-bottom: solid 1px rgba(100, 100, 100, .3);
     }
     .info-service {
-        margin-top: 12px;
+        margin-top: 18px;
         display: flex;
         justify-content: space-between;
         font-size: 14px;

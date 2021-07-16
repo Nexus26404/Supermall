@@ -1,6 +1,6 @@
 <template>
     <swiper class="swiperer">
-        <swiper-item v-for="item in topImages" :key="item">
+        <swiper-item v-for="item in topImages" :key="item" class="swiperer-item">
             <img :src="item" alt="">
         </swiper-item>
     </swiper>
@@ -29,6 +29,7 @@
         height: 250px;
         overflow: hidden;
     }
+
     .swiperer img {
         width: 100%;
     }
