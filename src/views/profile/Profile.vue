@@ -1,127 +1,65 @@
 <template>
-  <div>
-    <scroll class="content" :probe-type="0">
-      <ul>
-        <li>我是第1个</li>
-        <li>我是第2个</li>
-        <li>我是第3个</li>
-        <li>我是第4个</li>
-        <li>我是第5个</li>
-        <li>我是第6个</li>
-        <li>我是第7个</li>
-        <li>我是第8个</li>
-        <li>我是第9个</li>
-        <li>我是第10个</li>
-        <li>我是第11个</li>
-        <li>我是第12个</li>
-        <li>我是第13个</li>
-        <li>我是第14个</li>
-        <li>我是第15个</li>
-        <li>我是第16个</li>
-        <li>我是第17个</li>
-        <li>我是第18个</li>
-        <li>我是第19个</li>
-        <li>我是第20个</li>
-        <li>我是第21个</li>
-        <li>我是第22个</li>
-        <li>我是第23个</li>
-        <li>我是第24个</li>
-        <li>我是第25个</li>
-        <li>我是第26个</li>
-        <li>我是第27个</li>
-        <li>我是第28个</li>
-        <li>我是第29个</li>
-        <li>我是第30个</li>
-        <li>我是第31个</li>
-        <li>我是第32个</li>
-        <li>我是第33个</li>
-        <li>我是第34个</li>
-        <li>我是第35个</li>
-        <li>我是第36个</li>
-        <li>我是第37个</li>
-        <li>我是第38个</li>
-        <li>我是第39个</li>
-        <li>我是第40个</li>
-        <li>我是第41个</li>
-        <li>我是第42个</li>
-        <li>我是第43个</li>
-        <li>我是第44个</li>
-        <li>我是第45个</li>
-        <li>我是第46个</li>
-        <li>我是第47个</li>
-        <li>我是第48个</li>
-        <li>我是第49个</li>
-        <li>我是第50个</li>
-        <li>我是第51个</li>
-        <li>我是第52个</li>
-        <li>我是第53个</li>
-        <li>我是第54个</li>
-        <li>我是第55个</li>
-        <li>我是第56个</li>
-        <li>我是第57个</li>
-        <li>我是第58个</li>
-        <li>我是第59个</li>
-        <li>我是第60个</li>
-        <li>我是第61个</li>
-        <li>我是第62个</li>
-        <li>我是第63个</li>
-        <li>我是第64个</li>
-        <li>我是第65个</li>
-        <li>我是第66个</li>
-        <li>我是第67个</li>
-        <li>我是第68个</li>
-        <li>我是第69个</li>
-        <li>我是第70个</li>
-        <li>我是第71个</li>
-        <li>我是第72个</li>
-        <li>我是第73个</li>
-        <li>我是第74个</li>
-        <li>我是第75个</li>
-        <li>我是第76个</li>
-        <li>我是第77个</li>
-        <li>我是第78个</li>
-        <li>我是第79个</li>
-        <li>我是第80个</li>
-        <li>我是第81个</li>
-        <li>我是第82个</li>
-        <li>我是第83个</li>
-        <li>我是第84个</li>
-        <li>我是第85个</li>
-        <li>我是第86个</li>
-        <li>我是第87个</li>
-        <li>我是第88个</li>
-        <li>我是第89个</li>
-        <li>我是第90个</li>
-        <li>我是第91个</li>
-        <li>我是第92个</li>
-        <li>我是第93个</li>
-        <li>我是第94个</li>
-        <li>我是第95个</li>
-        <li>我是第96个</li>
-        <li>我是第97个</li>
-        <li>我是第98个</li>
-        <li>我是第99个</li>
-        <li>我是第100个</li>
-      </ul>
-    </scroll>
+  <div id="profile">
+   <nav-bar class="nav-bar">
+     <template v-slot:center><div>商城</div></template>
+   </nav-bar>
+    <user-info></user-info>
+    <div class="ppp">
+      <detail-info>
+        <template v-slot:name><div>0 <span style="color:#666666;font-weight: normal;font-size: 15px">元</span></div></template>
+        <template v-slot:value><div>我的余额</div></template>
+      </detail-info>
+      <detail-info>
+          <template v-slot:name><div>0 <span style="color:#666666;font-weight: normal;font-size: 15px">个</span></div></template>
+        <template v-slot:value><div>我的优惠</div></template>
+      </detail-info>
+      <detail-info>
+        <template v-slot:name><div>0 <span style="color:#666666;font-weight: normal;font-size: 15px">分</span></div></template>
+        <template v-slot:value><div>我的积分</div></template>
+      </detail-info>
+    </div>
+    <list-view :list-data="orderList" class="order-list"></list-view>
+    <list-view :list-data="serviceList" class="service-list"></list-view>
   </div>
 </template>
 
 <script>
-    import Scroll from 'components/common/scroll/Scroll'
-
-    export default {
-        name:'Profile',
-        components: {
-          Scroll
-        }
+import NavBar from "@/components/common/navbar/NavBar";
+import UserInfo from "@/views/profile/childComps/UserInfo";
+import detailInfo from "@/views/profile/childComps/detailInfo";
+import ListView from "@/views/profile/childComps/ListView";
+export default {
+  name: "Profile",
+  components: {
+    NavBar,
+    UserInfo,
+    detailInfo,
+    ListView
+  },
+  data: function () {
+		  return {
+        orderList: [
+          {icon: '#order', iconColor: '#ff8198', info: '我的消息'},
+          {icon: '#point', iconColor: '#fc7b53', info: '积分商城'},
+          {icon: '#vip', iconColor: '#ffc636', info: '会员卡'},
+        ],
+        serviceList: [
+          {icon: '#service', iconColor: '#ff8198', info: '我的购物车'},
+          {icon: '#download', iconColor: '#ff8198', info: '下载购物APP'},
+        ]
+      }
+    },
+    mounted: function () {
     }
+	}
 </script>
 
 <style scoped>
-    .content {
-      height: 300px;
-      background-color: pink;
-      overflow: hidden;
-    }
+ .nav-bar {
+   background-color: #ff8198;
+   color: white;
+ }
+ .ppp{
+   display: flex;
+ }
 </style>
